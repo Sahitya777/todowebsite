@@ -4,7 +4,7 @@
   margin: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.main-div{
+.main_div{
   width: 100%;
   height: 100vh;
   background: #6983aa;
@@ -19,6 +19,7 @@
   background-color: #f4f4f4;
   box-shadow: 5px 5px 25px -5px rgba(0,0,0,0.5);
   border-radius: 15px;
+  margin-top: 50px;
 }
 h1{
   color: white;
@@ -40,4 +41,63 @@ button{
   outline: none;
   margin-left: 10px;
   box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3);
+}
+button:hover{
+  background-color: #20bf6b;
+}
+ol{
+  margin-top: 30px;
+}
+ol li{
+  padding-left: 0px;
+  text-align: left;
+  font-size: 20px;
+  min-height: 40px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #8566aa;
+  text-transform: capitalize;
+}
+.todo_style{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.todo_style .fa-times{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #8566aa;
+  border-radius: 50%;
+  margin: 0 15px 0 35px;
+  color: aliceblue;
+  box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.3);
+}
+.todo_style .fa-times:hover{
+  background-color: crimson;
+}
+.todo_style .fa-times:hover .list_style{
+  color: crimson;
+}
+@media (max-width:768px) {
+    .center_div{
+      width: 55%;
+    }
+    .todo_style .fa-times{
+      margin: 0 15px 0 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    button{
+      margin-left: 5px;
+      min-height: 40px;
+      width: 40px;
+      color: #fff;
+      font-size: 30px;
+    }
 }

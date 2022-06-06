@@ -1,18 +1,42 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
+import ToDoList from './ToDoLists';
 function App() {
+  const [inputList,setInputList]=useState("");
+  const [Items,setItems]=useState([]);
+  const itemEvent=(e)=>{
+    setInputList(e.target.value);
+
+  };
+
+  const listofItems=()=>{
+    setItems((oldItems)=>{
+      return [...oldItems,inputList];
+    })
+  };
+  const deleteItems=(id)=>{
+    setItems((oldItems)=>{
+      return oldItems.filter((arrElem,index)=>{
+        return index !==id;
+      })
+    })
+  };
+  // setInputList('');
+
   return (
-    <div className="main_dev">
+    <div className="main_div">
       <div className='center_div'>
         <br/>
         <h1>Todo List</h1>
         <br/>
-        <input type='text' placeholder="Add a items" />
-        <button>+</button>
+        <input type='text' placeholder="Add a items" value={inputList} onChange={itemEvent} />
+        <button onClick={listofItems}>+</button>
         <ol>
-          <li>
-            buy apple
-          </li>
+            
+            {Items.map((itemval,index)=>{
+              return <ToDoList key={index} id={index} text={itemval} onSelect={deleteItems} />;
+            })}
+          
         </ol>
       </div>
     </div>
